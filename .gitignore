@@ -1,0 +1,5 @@
+.venv_my_hospital/
+.env
+.vscode/
+*.pyc
+__pycache__
