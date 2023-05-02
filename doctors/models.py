@@ -22,4 +22,5 @@ class DoctorProfile(models.Model):
         return self.user.id
 
     def __str__(self):
-        return f"Dr. {self.user.first_name} {self.user.last_name} ({self.department.name})"
+        return "Dr. " + str(self.user.first_name) + " " + str(self.user.last_name) + " (" + str(self.department.name) + ")"
+    
