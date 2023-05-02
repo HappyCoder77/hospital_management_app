@@ -4,5 +4,4 @@ from django.db import models
 class CustomUser(AbstractUser):
     
     def __str__(self):
-        print("The value of username is", str(self.username))
-        return "Bacon"
+        return self.username
