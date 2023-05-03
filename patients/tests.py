@@ -21,7 +21,7 @@ class PacientProfileTests(TestCase):
         )
 
     def test_model_data(self):
-        self.assertEqual(self.patient_profile.pk, 1)
+        self.assertEqual(self.patient_profile.pk, 3)
         self.assertEqual(self.patient_profile.user.pk, self.user.pk)
         self.assertEqual(self.patient_profile.profile_pic, "") # TODO: arreglar esto con una imagen real
         self.assertEqual(self.patient_profile.address, "Dirección")
