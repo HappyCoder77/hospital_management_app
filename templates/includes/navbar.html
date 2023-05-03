@@ -38,15 +38,15 @@
       <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav">
 
-          <a href="#" class="nav-item nav-link">Administrador</a>
-          <a href="#" class="nav-item nav-link">Doctores</a>
-          <a href="#" class="nav-item nav-link">Pacientes</a>
+          <a href="{% url 'admin_click' %}" class="nav-item nav-link">Administrador</a>
+          <a href="{% url 'doctor_click' %}" class="nav-item nav-link">Doctores</a>
+          <a href="{% url 'patient_click' %}" class="nav-item nav-link">Pacientes</a>
 
 
         </div>
 
         <div class="navbar-nav">
-          <a href="#" class="nav-item nav-link">Sobre nosotros</a>
+          <a href="{% url 'about_us' %}" class="nav-item nav-link">Sobre nosotros</a>
           <a href="#" class="nav-item nav-link">Contáctanos</a>
         </div>
 
