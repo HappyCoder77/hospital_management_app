@@ -1,7 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 
-from accounts.models import CustomUser
 from .models import Department, DoctorProfile
 
 
