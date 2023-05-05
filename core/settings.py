@@ -154,7 +154,7 @@ EMAIL_PORT = 587
 
 EMAIL_HOST_USER = 'rojasaul77@gmail.com' # this email will be used to send emails
 
-EMAIL_HOST_PASSWORD = 'lucero77' # host email password required
+EMAIL_HOST_PASSWORD = 'xyz' # host email password required
 
 # now sign in with your host gmail account in your browser
 # open following link and turn it ON
