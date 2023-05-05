@@ -1,7 +1,7 @@
 from django.db import models
 
 from accounts.models import CustomUser
-
+    
 class PatientProfile(models.Model):
     user=models.OneToOneField(CustomUser,on_delete=models.CASCADE)
     profile_pic= models.ImageField(upload_to='profile_pic/PatientProfilePic/',null=True,blank=True)
