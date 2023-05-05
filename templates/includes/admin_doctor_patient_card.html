@@ -61,7 +61,7 @@
       <div class="card">
         <img src="{% static "images/admin.png" %}" alt="John" style="width:100%">
         <p class="title">ADMINISTRADOR</p>
-        <p><button><a href="#">VER</a></button></p>
+        <p><button><a href="{% url 'admin_click' %}">VER</a></button></p>
       </div>
 
     </div>
@@ -70,7 +70,7 @@
       <div class="card">
         <img src="{% static "images/doctor.png" %}" alt="John" style="width:100%">
         <p class="title">DOCTOR</p>
-        <p><button><a href="#">VER</a></button></p>
+        <p><button><a href="{% url 'doctor_click' %}">VER</a></button></p>
       </div>
     </div>
 
@@ -78,7 +78,7 @@
       <div class="card">
         <img src="{% static "images/patient.jpg" %}" alt="John" style="width:100%">
         <p class="title">PACIENTE</p>
-        <p><button><a href="#">VER</a></button></p>
+        <p><button><a href="{% url 'patient_  click' %}">VER</a></button></p>
       </div>
     </div>
 
