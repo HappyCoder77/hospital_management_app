@@ -1,8 +1,9 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
-from django.utils import timezone
-from doctors.models import DoctorProfile, Department
+
+from doctors.models import Department, DoctorProfile
 from patients.models import PatientProfile
+
 from .models import Appointment, PatientDischargeDetails
 
 
@@ -22,27 +23,27 @@ class PacientProfileTests(TestCase):
 
         cls.department = Department.objects.create(
             name='Cardiologist',
-        ) 
+        )
 
         cls.patient_profile = PatientProfile.objects.create(
-            user = cls.user,
-            profile_pic = "",
+            user=cls.user,
+            profile_pic="",
             address="Dirección",
             mobile="04265789874",
         )
 
         cls.doctor_profile = DoctorProfile.objects.create(
-            user = cls.user2,
-            profile_pic = "",
+            user=cls.user2,
+            profile_pic="",
             address="Dirección",
             mobile="04265789874",
             department=cls.department,
         )
 
         cls.appointment = Appointment.objects.create(
-            patient = cls.patient_profile,
-            doctor = cls.doctor_profile,
-            description = "Descripción"
+            patient=cls.patient_profile,
+            doctor=cls.doctor_profile,
+            description="Descripción"
         )
 
     def test_model_data(self):
@@ -63,22 +64,22 @@ class PatientDischargeDetailsTests(TestCase):
         )
 
         cls.patient_profile = PatientProfile.objects.create(
-            user = cls.user,
-            profile_pic = "",
+            user=cls.user,
+            profile_pic="",
             address="Dirección",
             mobile="04265789874",
         )
 
         cls.patientdischargedetails = PatientDischargeDetails.objects.create(
-            patient = cls.patient_profile,
+            patient=cls.patient_profile,
             # admitDate = timezone.now()
             # releaseDate =
-            daySpent = 2,
-            roomCharge = 100,
-            medicineCost = 25,
-            doctorFee = 40,
-            OtherCharge = 10,
-            total = 145
+            daySpent=2,
+            roomCharge=100,
+            medicineCost=25,
+            doctorFee=40,
+            OtherCharge=10,
+            total=145
         )
 
     def test_model_data(self):
