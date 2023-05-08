@@ -12,16 +12,13 @@ from django.views.generic import TemplateView
 from .forms import AdminSignupForm, ContactUsForm
 from .models import DoctorProfile, PatientProfile, Appointment
 
+
 class HomeTemplateView(TemplateView):
     template_name = "index.html"
 
 
 class AdminClickTemplateView(TemplateView):
     template_name = "hospital/adminclick.html"
-
-
-class PatientClickTemplateView(TemplateView):
-    template_name = "patients/patientclick.html"
 
 
 class AboutUsTemplateView(TemplateView):
