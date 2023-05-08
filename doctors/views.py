@@ -1,7 +1,12 @@
 from django.contrib.auth.models import Group
 from django.shortcuts import render
+from django.views.generic import TemplateView
 
 from .forms import DoctorUserForm, DoctorProfileForm
+
+
+class DoctorClickTemplateView(TemplateView):
+    template_name = "doctors/doctorclick.html"
 
 
 def doctor_signup_view(request):

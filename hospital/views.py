@@ -20,10 +20,6 @@ class AdminClickTemplateView(TemplateView):
     template_name = "hospital/adminclick.html"
 
 
-class DoctorClickTemplateView(TemplateView):
-    template_name = "doctors/doctorclick.html"
-
-
 class PatientClickTemplateView(TemplateView):
     template_name = "patients/patientclick.html"
 
