@@ -1,16 +1,19 @@
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import Group
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.messages.views import SuccessMessageMixin
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, reverse
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, CreateView
 
+from doctors.models import Department
 from pages.forms import ContactUsForm
-from .forms import AdminSignupForm
+from .forms import AdminSignupForm, DepartmentForm
 from .models import DoctorProfile, PatientProfile, Appointment
 
 
@@ -39,11 +42,15 @@ class AdminLoginView(LoginView):
     redirect_authenticated_user = True
 
     def get_success_url(self):
-         return reverse_lazy('admin-dashboard')
+         return reverse_lazy('admin_dashboard')
 
     def form_invalid(self, form):
         messages.error(self.request, "Invalid username or password")
         return self.render_to_response(self.get_context_data(form=form))
+
+
+class LogoutView(LogoutView):
+    template_name = "pages/index.html"
 
 
 @login_required(login_url='adminlogin')
@@ -72,3 +79,26 @@ def admin_dashboard_view(request):
     'pendingappointmentcount':pendingappointmentcount,
     }
     return render(request,'hospital/admin_dashboard.html',context=mydict)
+
+
+class DeparmentCreateview(SuccessMessageMixin, CreateView):
+    model = Department
+    template_name = "hospital/department_form.html"
+    fields = ("name",)
+    success_url = reverse_lazy("admin_dashboard")
+    success_message = "Departamento creado exitosamente"
+
+    def get_success_url(self):
+        return reverse_lazy("admin_dashboard")
+
+
+class AdminDoctorView(LoginRequiredMixin, TemplateView):
+    template_name = "hospital/admin_doctor.html"
+
+
+class AdminPatientView(TemplateView):
+    template_name = "hospital/admin_patient.html"
+
+
+class AdminAppointmentView(TemplateView):
+    template_name = "hospital/admin_appointment.html"

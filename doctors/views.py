@@ -23,7 +23,7 @@ def doctor_signup_view(request):
             user.save()
             doctor = doctorForm.save(commit=False)
             doctor.user = user
-            doctor = doctor.save()
+            doctor.save()
             my_doctor_group = Group.objects.get_or_create(name='DOCTOR')
             my_doctor_group[0].user_set.add(user)
         return HttpResponseRedirect('doctorlogin')

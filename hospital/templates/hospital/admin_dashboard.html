@@ -1,6 +1,15 @@
 {% extends 'hospital/admin_base.html' %}
 {% load static %}
 {% block content %}
+
+{% if messages %}
+
+{% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+{% endfor %}
+
+{% endif %}
+
 {%include 'hospital/includes/admin_dashboard_cards.html'%}
 <br><br><br><br>
 <div class="container">

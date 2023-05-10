@@ -44,10 +44,10 @@ INSTALLED_APPS = [
     "widget_tweaks",
     # Local
     "accounts",
-    "pages",
     "doctors",
-    "patients",
     "hospital",
+    "pages",
+    "patients",
 ]
 
 MIDDLEWARE = [

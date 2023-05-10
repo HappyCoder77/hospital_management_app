@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Mi Clínica|| Admin Login</title>
+  <title>Mi Clínica|| Crear Departamento</title>
 
 
   <style type="text/css">
@@ -17,6 +17,10 @@
 
     a:link {
       text-decoration: none;
+    }
+
+    #cancelar {
+      padding: 20px;
     }
 
     .note {
@@ -62,7 +66,7 @@
     <div class="container register-form">
       <div class="form">
         <div class="note">
-          <p>Iniciar sesión: Administrador</p>
+          <p>Departamento: nuevo registro</p>
         </div>
 
         <div class="form-content">
@@ -70,20 +74,13 @@
             <div class="col-md-6">
 
               <div class="form-group">
-                {% render_field form.username class="form-control" placeholder="Nombre de usuario" %}
-              </div>
-
-            </div>
-            <div class="col-md-6">
-
-              <div class="form-group">
-                {% render_field form.password class="form-control" placeholder="Contraseña" %}
+                {% render_field form.name class="form-control" placeholder="Nombre del departamento" %}
               </div>
 
             </div>
           </div>
-          <button type="submit" class="btnSubmit">Iniciar sesión</button>
-          <div class="text-center">No tiene una cuenta? <a href="{% url 'admin_signup' %}">Regístrese aquí</a></div>
+          <button type="submit" class="btnSubmit">Guardar registro</button>
+          <a id="cancelar" href="{% url 'admin_dashboard' %}">Cancelar</a>
         </div>
       </div>
     </div>

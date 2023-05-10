@@ -286,10 +286,11 @@
       <h2>{{request.user.first_name}}</h2>
     </header>
     <ul>
-      <li tabindex="0" class="icon-dashboard"> <a style="color:white; text-decoration:none;" href="/admin-dashboard"><span>Dashboard</span></a> </li>
-      <li tabindex="0" class="icon-customers"> <a style="color:white; text-decoration:none;" href="/admin-doctor"><span>Doctor</span></a></li>
-      <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="/admin-patient"><span>Paciente</span></a></li>
-      <li tabindex="0" class="icon-calendar"> <a style="color:white; text-decoration:none;" href="/admin-appointment"><span>Cita</span></a></li>
+      <li tabindex="0" class="icon-dashboard"> <a style="color:white; text-decoration:none;" href="{% url 'admin_dashboard' %}"><span>Dashboard</span></a> </li>
+      <li tabindex="0" class="icon-customers"> <a style="color:white; text-decoration:none;" href="{% url 'add_department'%}"><span>Departamento</span></a></li>
+      <li tabindex="0" class="icon-customers"> <a style="color:white; text-decoration:none;" href="{% url 'dashboard_doctor' %}"><span>Doctor</span></a></li>
+      <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="{% url 'dashboard_patient' %}"><span>Paciente</span></a></li>
+      <li tabindex="0" class="icon-calendar"> <a style="color:white; text-decoration:none;" href="{% url 'dashboard_appointment' %}"><span>Cita</span></a></li>
     </ul>
   </nav>
 
@@ -299,14 +300,14 @@
     <!-- nav start -->
     <div class="bs-example">
       <nav class="navbar navbar-expand-md  navbar-dark fixed-top" style="background:#337AB7;">
-        <a href="/admin-dashboard" class="navbar-brand">Mi Clínica</a>
+        <a href="{% url 'admin_dashboard' %}" class="navbar-brand">Administrador</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
           <div class="navbar-nav" style=" margin-left: 90%;">
 
-            <a href="/logout" class="nav-item nav-link">Cerrar sesión</a>
+            <a href="{% url 'logout' %}" class="nav-item nav-link">Cerrar sesión</a>
           </div>
         </div>
       </nav>
