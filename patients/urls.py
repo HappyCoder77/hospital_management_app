@@ -6,5 +6,6 @@ from . import views
 urlpatterns = [
     path('patient-click', views.PatientClickTemplateView.as_view(), name='patient_click'),
     path("signup/", views.patient_signup_view, name="patient_signup"),
-    path("login/", LoginView.as_view(template_name="patients/patientlogin.html"), name="patient_login"),
+    path("login/", views.PatientLoginView.as_view(), name="patient_login"),
+    path("dashboard/", views.patient_dashboard_view, name="patient_dashboard"),
 ]
